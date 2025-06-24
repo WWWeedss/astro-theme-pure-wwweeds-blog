@@ -1,3 +1,7 @@
+# 你好啊！
+这里是 WWWeeds，祝你开心！
+
+---
 # Astro Theme Pure
 
 [English](./README.md) | [简体中文](./README-zh-CN.md)

@@ -1,7 +1,7 @@
 ---
 import { render, type CollectionEntry } from 'astro:content'
 
-import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
+import {getBlogCollection, sortMDByDate} from 'astro-pure/server'
 import PostLayout from '@/layouts/BlogPost.astro'
 
 export const prerender = true
@@ -12,6 +12,12 @@ export async function getStaticPaths() {
     params: { id: post.id },
     props: { post, posts }
   }))
+}
+
+const sortMDByPublishDate = (posts: CollectionEntry<'blog'>[]) => {
+  return posts.sort((a, b) => {
+    return new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+  })
 }
 
 type Props = {

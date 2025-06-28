@@ -51,7 +51,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Projects', link: '/projects' },
       { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' },
-      { title: 'Ask Me',link: 'https://box.tama.guru/_/askwwweeds'}
+      { title: 'Ask Me Anything',link: 'https://box.tama.guru/_/askwwweeds'}
     ]
   },
 

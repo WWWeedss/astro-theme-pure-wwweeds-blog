@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/waline/(.*)",
+      "destination": "https://waline.ww-weeds.xyz/$1"
+    }
+  ]
+}

@@ -14,7 +14,15 @@ const headings = [
 ]
 
 const { friends } = links
-const linksConf = config.integ.links
+const linksConf = {
+  logbook: [],
+  applyTip: [
+    { name: 'Name', val: "WWWeeds's blog" },
+    { name: 'Desc', val: '向无聊宣战！' },
+    { name: 'Link', val: 'https://ww-weeds.xyz/' },
+    { name: 'Avatar', val: 'https://i.postimg.cc/GtMPXxmK/image.png' }
+  ]
+}
 ---
 
 <PageLayout title='Links' info='/links'>

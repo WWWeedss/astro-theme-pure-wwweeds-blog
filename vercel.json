@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/walind/:path*",
-      "destination": "https://walind.ww-weeds.xyz/:path*"
+      "source": "/waline/:path*",
+      "destination": "https://waline.ww-weeds.xyz/:path*"
     }
   ]
 }

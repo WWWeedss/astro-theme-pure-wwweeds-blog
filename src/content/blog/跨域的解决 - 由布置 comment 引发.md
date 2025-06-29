@@ -31,7 +31,7 @@ tags: ["开发问题小记"]
 
 > 所以为啥不把 api 放到云上，直接做成通过 apikey 可得而是要让用户自己部署呢？
 
-好，现在我已经在 vercel 上部署了 waline 后端系统，假设生成的默认域名是 **example.com**。那么此时我把该域名替换到 baseUrl 内，此时评论请求是发不过去的，因为出现了**跨域问题**。
+好，现在我已经在 vercel 上部署了 waline 后端系统，假设生成的默认域名是 **example.com**。那么此时我把该域名替换到 baseUrl 内，此时是无法正常显示数据的，因为出现了**跨域问题**。
 
 ![image-20250629072801797](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629072801797.png)
 

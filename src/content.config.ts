@@ -31,6 +31,7 @@ const blog = defineCollection({
           color: z.string().optional()
         })
         .optional(),
+      isShowHeroImage: z.boolean().default(false),
       tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
       language: z.string().optional(),
       draft: z.boolean().default(false),

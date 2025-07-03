@@ -27,6 +27,7 @@ const {
 const {
   description,
   heroImage,
+  isShowHeroImage,
   publishDate,
   title,
   updatedDate,
@@ -54,7 +55,7 @@ const reversePosts = posts.sort((a, b) => {
 >
   {!!headings.length && <TOC {headings} slot='sidebar' />}
 
-  <Hero {data} {remarkPluginFrontmatter} slot='header' />
+  {isShowHeroImage && <Hero {data} {remarkPluginFrontmatter} slot='header' />}
 
   <slot />
 

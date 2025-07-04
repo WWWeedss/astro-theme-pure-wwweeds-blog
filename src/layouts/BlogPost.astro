@@ -46,6 +46,10 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 const reversePosts = posts.sort((a, b) => {
   return new Date(a.data.publishDate).getTime() - new Date(b.data.publishDate).getTime()
 })
+
+if (!data.isShowHeroImage) {
+  data.heroImage = undefined
+}
 ---
 
 <PageLayout
@@ -55,7 +59,7 @@ const reversePosts = posts.sort((a, b) => {
 >
   {!!headings.length && <TOC {headings} slot='sidebar' />}
 
-  {isShowHeroImage && <Hero {data} {remarkPluginFrontmatter} slot='header' />}
+  <Hero {data} {remarkPluginFrontmatter} slot='header' />
 
   <slot />
 

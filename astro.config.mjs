@@ -24,10 +24,12 @@ import {
 } from './src/plugins/shiki-transformers.ts'
 import config from './src/site.config.ts'
 import vercelStatic from '@astrojs/vercel'
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://astro-pure.js.org',
+  site: 'https://ww-weeds.xyz',
   // base: '/docs',
   trailingSlash: 'never',
 
@@ -51,7 +53,7 @@ export default defineConfig({
 
   integrations: [
     // astro-pure will automatically add sitemap, mdx & unocss
-    // sitemap(),
+    sitemap(),
     // mdx(),
     AstroPureIntegration(config)
     // (await import('@playform/compress')).default({

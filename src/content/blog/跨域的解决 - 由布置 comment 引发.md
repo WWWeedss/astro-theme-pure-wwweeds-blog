@@ -27,13 +27,13 @@ tags: ["开发问题小记"]
 
 交互的路径大概是这样的：
 
-![image-20250629071209909](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629071209909.png)
+![image-20250629071209909](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629071209909.png)
 
 > 所以为啥不把 api 放到云上，直接做成通过 apikey 可得而是要让用户自己部署呢？
 
 好，现在我已经在 vercel 上部署了 waline 后端系统，假设生成的默认域名是 **example.com**。那么此时我把该域名替换到 baseUrl 内，此时是无法正常显示数据的，因为出现了**跨域问题**。
 
-![image-20250629072801797](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629072801797.png)
+![image-20250629072801797](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629072801797.png)
 
 > 看到这经典的 CORS 报错，有没有感到很亲切~
 
@@ -45,11 +45,11 @@ tags: ["开发问题小记"]
 
 对于简单请求：浏览器拿到了 server 的响应后将数据屏蔽。这种情况下，server 已经执行了请求。
 
-![image-20250629085133741](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629085133741.png)
+![image-20250629085133741](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629085133741.png)
 
 对于复杂请求：浏览器会先发送一个预检请求，如果发现不行了就不发正式请求了。这种情况下，server 没有执行请求。
 
-![image-20250629085518572](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629085518572.png)
+![image-20250629085518572](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629085518572.png)
 
 > 至于为什么会有跨域的屏蔽，这是出于安全性方面的考虑……但实际我们也看到，简单请求也可能更改服务端数据，而返回的响应只是被屏蔽了，服务端实际执行了请求。所以服务端数据安全还得在业务代码里自己保障。
 
@@ -73,7 +73,7 @@ tags: ["开发问题小记"]
 
 看来我们必须保证 waline 的服务通过 https://blog.com/xxx 来访问了，这就是我们需要把 waline 服务映射到 blog.com 的子路径上。怎么做呢？我们必须有一个第三方为我们转发请求。
 
-![image-20250629091622657](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629091622657.png)
+![image-20250629091622657](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629091622657.png)
 
 如上图，浏览器并不知道发往 blog.com/waline 的请求被谁接手了，它只知道对方发回了想要的 response，同样的，waline 也不知道是谁发来的请求。第三方对于浏览器和 waline 都是透明的。
 
@@ -98,7 +98,7 @@ vercel 会自动解析，push 后重新部署即可。浏览器发出的请求�
 
 看到 rewrite，你可能会想到 redirect，这两个东西有什么区别呢？
 
-![image-20250629092347462](https://typora-images-gqy.oss-cn-nanjing.aliyuncs.com/image-20250629092347462.png)
+![image-20250629092347462](https://typora-images-wwweeds.oss-cn-hangzhou.aliyuncs.com/image-20250629092347462.png)
 
 如上图，浏览器在 redirect 的情况下清楚地知道 server B 的存在，所以在跨域情景下，redirect 无法解决问题，只能是浏览器向 blog.com/waline 请求之后，再次向 waline.blog.com 请求，仍然会被无情拦截。
 

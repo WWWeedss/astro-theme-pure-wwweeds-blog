@@ -33,7 +33,7 @@ UserService userService;
 
 Spring 就是基础设施，除了帮我们管理好实例之间的依赖，还内置了 event、AOP 等等功能。我已经无法想象我无法想象没有 SpringBoot 或类似 DI 容器的后端开发流程，就像我无法想象没有 ChatAI 的工作生活。
 
-## 一起搭一个积木：从使用者的角度看 Spring 功能的逐步丰满 
+## 一起搭一个积木：从使用者的角度看 Spring 功能的逐步丰满
 
 ### 最简单的容器
 

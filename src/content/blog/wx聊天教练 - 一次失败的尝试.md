@@ -3,7 +3,7 @@ title: "尝试 - wx聊天教练"
 description: "尽管失败，总之开始了"
 publishDate: "2025-09-23"
 draft: false
-tags: ["玩具项目"]
+tags: ["项目学习"]
 ---
 
 

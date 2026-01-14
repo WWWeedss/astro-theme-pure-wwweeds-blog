@@ -3,7 +3,7 @@ title: "small-spring 学习总结"
 description: "第一次感受到编程的魅力"
 publishDate: "2025-07-14"
 draft: false
-tags: ["脚手架学习"]
+tags: ["项目学习"]
 ---
 
 # 爱上编程的第一步
